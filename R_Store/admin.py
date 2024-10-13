@@ -9,14 +9,20 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(models.Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'stock')
+    list_display = ('name', 'price', 'stock', 'get_discount_price', 'get_full_info')
     search_fields = ('name',)
     list_filter = ('category',)
 
+    def get_discount_price(self, obj):
+        return obj.get_discount_price(10)
+    get_discount_price.short_description = 'цена со скидкой 10%'
+
 @admin.register(models.User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('username', 'email')
+    list_display = ('username', 'email', 'get_full_name')
     search_fields = ('username', 'email')
+
+
 
 @admin.register(models.Order)
 class OrderAdmin(admin.ModelAdmin):
@@ -26,6 +32,6 @@ class OrderAdmin(admin.ModelAdmin):
 
 @admin.register(models.Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ('user', 'product', 'rating', 'created_at')
+    list_display = ('user', 'product', 'rating', 'created_at', 'commentary')
     list_filter = ('rating',)
     search_fields = ('user__username', 'product__name')

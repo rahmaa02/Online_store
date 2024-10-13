@@ -16,11 +16,20 @@ class Category(models.Model):
         return self.name
 
 class Product(models.Model):
+
+    BISCUITS = 'biscuits'
+    MILK =  'milk'
+    BREAD =  'bread'
+
+    CATEGORY_CHOICES = [ (BISCUITS, 'Печенье'), (MILK, 'Молочные'), (BREAD, 'Хлебные'),]
+
+
+
     name = models.CharField(verbose_name='Название товара', max_length=255)
     price = models.DecimalField(verbose_name='Цена', max_digits=10, decimal_places=2)
     description = models.TextField(verbose_name='Описание', blank=True)
     stock = models.PositiveIntegerField(verbose_name='Количество на складе')
-    category = models.ManyToManyField(Category, verbose_name='Категории', related_name='products')
+    category = models.CharField(verbose_name='Категория', max_length=10, choices=CATEGORY_CHOICES, default=BISCUITS)
     image = models.ImageField(upload_to='products/', verbose_name='Изображение товара', blank=True, null=True)
 
     class Meta:
@@ -30,6 +39,12 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_discount_price(self, discount_percentage):
+        return self.price - (self.price * discount_percentage / 100)
+
+    def get_full_info(self):
+        return f'Товар -- {self.name}, Цена -- {self.price}, Осталось на складе -- {self.stock}'
 
 
 class User(models.Model):
@@ -44,6 +59,9 @@ class User(models.Model):
 
     def __str__(self):
         return self.username
+
+    def get_full_name(self):
+        return f'User -- {self.username}, {self.email}'
 
 
 class Order(models.Model):
@@ -76,3 +94,6 @@ class Review(models.Model):
 
     def __str__(self):
         return f'Отзыв от {self.user} на {self.product}'
+
+    def commentary(self):
+        return self.comment[:10]
