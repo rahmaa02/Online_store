@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Детали продукта{% endblock %}
+
+{% block content %}
+<h1>{{ product.name }}</h1>
+<p>Цена: {{ product.price }} руб.</p>
+<p>Описание: {{ product.description|default:"Нет описания" }}</p>
+<p>Количество на складе: {{ product.stock }}</p>
+<p>Категория: {{ product.get_category_display }}</p>
+<img src="{{ product.image.url }}" alt="{{ product.name }}" />
+
+<a href="{% url 'product-update' product.pk %}">Редактировать</a>
+<a href="{% url 'product-delete' product.pk %}">Удалить</a>
+{% endblock %}
