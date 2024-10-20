@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'R_Store/base.html' %}
 
 {% block title %}Детали продукта{% endblock %}
 
@@ -8,7 +8,12 @@
 <p>Описание: {{ product.description|default:"Нет описания" }}</p>
 <p>Количество на складе: {{ product.stock }}</p>
 <p>Категория: {{ product.get_category_display }}</p>
-<img src="{{ product.image.url }}" alt="{{ product.name }}" />
+
+{% if product.image %}
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+{% else %}
+    <p>Изображение недоступно</p>
+{% endif %}
 
 <a href="{% url 'product-update' product.pk %}">Редактировать</a>
 <a href="{% url 'product-delete' product.pk %}">Удалить</a>

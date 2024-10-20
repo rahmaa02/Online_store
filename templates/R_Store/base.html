@@ -16,6 +16,14 @@
         </nav>
     </header>
 
+
+     <aside>
+        {% block sidebar %}
+        <p>Это боковая панель по умолчанию.</p>
+        {% endblock %}
+    </aside>
+
+
     <main>
         {% block content %}
         {% endblock %}

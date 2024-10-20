@@ -1,4 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'R_Store/base.html' %}
+
+{% block sidebar %}
+    <form method="get">
+        {{ filter.form.as_p }}
+        <button type="submit">Поиск</button>
+    </form>
+{% endblock %}
+
 
 {% block title %}Список товаров{% endblock %}
 
