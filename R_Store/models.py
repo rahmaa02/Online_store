@@ -25,7 +25,7 @@ class Product(models.Model):
 
 
 
-    name = models.CharField(verbose_name='Название товара', max_length=255)
+    name = models.CharField(verbose_name='Название товара', max_length=100)
     price = models.DecimalField(verbose_name='Цена', max_digits=10, decimal_places=2)
     description = models.TextField(verbose_name='Описание', blank=True)
     stock = models.PositiveIntegerField(verbose_name='Количество на складе')
