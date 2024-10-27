@@ -16,18 +16,33 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
+from django.db import router
 from django.urls import path, include
 
+from rest_framework.routers import DefaultRouter
 from R_Store import views
 
+
+
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 from django.conf.urls.static import  static
 
 
+router = DefaultRouter()
+
+router.register('users', views.UserAPI, basename='users')
+router.register('orders', views.OrderAPI, basename='orders')
+router.register('categories', views.CategoryAPI, basename='categories')
+router.register('products', views.ProductAPI, basename='products')
+router.register('reviews', views.ReviewAPI, basename='reviews')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('schema/', SpectacularAPIView.as_view(), name = 'schema'),
+    path('swagger/', SpectacularSwaggerView.as_view(url_name='schema')),
 
     path('', include('R_Store.urls')),
 
 
-]
+] + router.urls

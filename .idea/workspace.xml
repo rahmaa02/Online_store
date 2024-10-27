@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b3aa6f1-d564-4b95-86ef-ca2e79f8f7fc" name="Changes" comment="6 фильтры">
-      <change afterPath="$PROJECT_DIR$/R_Store/factories.py" afterDir="false" />
+    <list default="true" id="8b3aa6f1-d564-4b95-86ef-ca2e79f8f7fc" name="Changes" comment="7 тесты фабрики">
+      <change afterPath="$PROJECT_DIR$/R_Store/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/R_Store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/R_Store/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/R_Store/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/R_Store/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/R_Store/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online_store/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_store/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online_store/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_store/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,14 +49,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.views.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.urls.executor": "Run",
+    "Python.views.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -103,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729442103831</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="7 тесты фабрики">
+      <option name="closed" value="true" />
+      <created>1729616203476</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729616203476</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +132,7 @@
     <MESSAGE value="Добавлены методы в модели + choices" />
     <MESSAGE value="4. Скрины заданий" />
     <MESSAGE value="5 Классовые представления и шаблоны" />
-    <option name="LAST_COMMIT_MESSAGE" value="5 Классовые представления и шаблоны" />
+    <MESSAGE value="7 тесты фабрики" />
+    <option name="LAST_COMMIT_MESSAGE" value="7 тесты фабрики" />
   </component>
 </project>

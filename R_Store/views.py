@@ -8,11 +8,34 @@ from .models import Product
 from django_filters.views import FilterView
 
 
-from R_Store.models import Product
+from rest_framework import viewsets
+
+from R_Store.models import Product, User, Order, Category, Review
 from R_Store import filters
+from R_Store import serializers
+
 
 # Create your views here.
 
+class UserAPI(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = serializers.User
+
+class OrderAPI(viewsets.ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = serializers.Order
+
+class CategoryAPI(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = serializers.Category
+
+class ProductAPI(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = serializers.Product
+
+class ReviewAPI(viewsets.ModelViewSet):
+    queryset = Review.objects.all()
+    serializer_class = serializers.Review
 
 class ProductListView(FilterView):
     model = Product
